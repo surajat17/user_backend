@@ -1,8 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors')
 const { faker } = require('@faker-js/faker');
 const async = require('async');
 require('dotenv').config();
+
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
 
 const app = express();
 const port = process.env.PORT || 3000;
